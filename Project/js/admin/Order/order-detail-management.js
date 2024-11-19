@@ -16,7 +16,7 @@ const totalOrder = $('.cost.total');
 
 $(document).ready(function() {
     const orderId =  new URLSearchParams(window.location.search).get('id');
-    const url='../../php/admin/OrderDetail.php?id='+ orderId;    
+    const url='../../../php/admin/OrderDetail.php?id='+ orderId;    
     if(orderId !='') {
         fetchData_Customer(orderId);
 
