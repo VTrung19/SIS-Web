@@ -71,8 +71,17 @@
             ); 
         }
 
-
         return $response;   
+    }
+
+    function validateFeedBack($feedBackContent) {
+        $result = str_replace(
+            ['<', '>'], // Thay thế '<', '>'
+            ['&lt;', '&gt;'],
+            $feedBackContent
+        );
+
+        return $result;
     }
 
     function addFeedback() {
@@ -81,9 +90,11 @@
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $orderId = $_POST['orderId'];
             $productId = $_POST['productId'];
-            $fb_content = $_POST['fb_content'];
+            $fb_content = validateFeedBack($_POST['fb_content']);
             $fb_score = $_POST['fb_score'];  
         }
+
+        
 
         //get user_id
         $sql1 = "SELECT ORDERS.USER_ID, ORDERS.NAME FROM ORDERS WHERE ORDERS.ORDER_ID = ?";
