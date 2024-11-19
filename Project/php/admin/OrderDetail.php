@@ -141,4 +141,4 @@
 ?>
 <!---->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
-<script type="module" src="../../js/admin/Order/order-detail-management"></script>
+<script type="module" src="../../js/admin/Order/order-detail-management.js"></script>
