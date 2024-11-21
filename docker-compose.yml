@@ -1,0 +1,27 @@
+version: '3.8'
+
+services:
+  db:
+    image: mysql:8.0
+    container_name: mysql-db
+    ports:
+      - "9906:3306"  # Expose MySQL on port 3306
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpassword  # Set the root password
+      MYSQL_DATABASE: shoe_shop_db      # Default database
+      MYSQL_USER: testuser              # Additional user
+      MYSQL_PASSWORD: testpassword      # Password for additional user
+    volumes:
+      - ./mysql/data:/var/lib/mysql     # Persist database data
+      - ./mysql/shoe_shop_db.sql:/docker-entrypoint-initdb.d/dump.sql
+
+  php-apache-environment:
+    build:
+      context: ./php-apache2
+      dockerfile: Dockerfile
+    depends_on:
+      - db
+    volumes:
+      - ./src/:/var/www/html/
+    ports:
+      - 9000:80
