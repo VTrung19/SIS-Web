@@ -1,27 +1,64 @@
 version: '3.8'
-
 services:
   db:
     image: mysql:8.0
     container_name: mysql-db
     ports:
-      - "9906:3306"  # Expose MySQL on port 3306
+      - "9906:3306"
     environment:
-      MYSQL_ROOT_PASSWORD: rootpassword  # Set the root password
-      MYSQL_DATABASE: shoe_shop_db      # Default database
-      MYSQL_USER: testuser              # Additional user
-      MYSQL_PASSWORD: testpassword      # Password for additional user
+      MYSQL_ROOT_PASSWORD: rootpassword
+      MYSQL_DATABASE: shoe_shop_db
+      MYSQL_USER: testuser
+      MYSQL_PASSWORD: testpassword
     volumes:
-      - ./mysql/data:/var/lib/mysql     # Persist database data
+      - ./mysql/data:/var/lib/mysql
       - ./mysql/shoe_shop_db.sql:/docker-entrypoint-initdb.d/dump.sql
+    networks:
+      - app-network
 
-  php-apache-environment:
+  webserver:
     build:
       context: ./php-apache2
       dockerfile: Dockerfile
+    container_name: apache-server
+    ports:
+      - "9000:80"
+    volumes:
+      - app-code:/var/www/html
+    networks:
+      - app-network
+    depends_on:
+      - app
+
+  app:
+    build:
+      context: ./src
+      dockerfile: Dockerfile
+    container_name: php-app
+    image: pquyenn/test-sis:latest
+    volumes:
+      - app-code:/var/www/html
+    networks:
+      - app-network
     depends_on:
       - db
-    volumes:
-      - ./src/:/var/www/html/
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    container_name: phpmyadmin
     ports:
-      - 9000:80
+      - "8080:80"
+    environment:
+      PMA_HOST: db
+      MYSQL_ROOT_PASSWORD: rootpassword
+    depends_on:
+      - db
+    networks:
+      - app-network
+
+volumes:
+  app-code:
+
+networks:
+  app-network:
+    driver: bridge

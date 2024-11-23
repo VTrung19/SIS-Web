@@ -29,7 +29,7 @@ $(document).ready(function () {
     
 
     $.ajax({
-        url: '../../controller/homepage-shopping/homepage-controller.php',
+        url: '../../Controller/homepage-shopping/homepage-controller.php',
         type: 'GET',
         dataType: 'json',
         success: function (data) {

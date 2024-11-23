@@ -5,7 +5,7 @@ $(document).ready(function() {
     //EVENT WHEN OPEN MODAL
     $('#open-profile').on('click', function(){
         var xhr = new XMLHttpRequest();
-        xhr.open("POST", "../../../php/controller/store/login-signup-forgotpw/account-controller.php", true);
+        xhr.open("POST", "../../../php/Controller/store/login-signup-forgotpw/account-controller.php", true);
         xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
         // Gửi dữ liệu 
         var data = 'action=' + encodeURIComponent('fetch_profile');
@@ -40,7 +40,7 @@ $(document).ready(function() {
         if(name.localeCompare('') != 0  && phone_input.checkValidity()){
             e.preventDefault();
             var xhr = new XMLHttpRequest();
-            xhr.open("POST", "../../../php/controller/store/login-signup-forgotpw/account-controller.php", true);
+            xhr.open("POST", "../../../php/Controller/store/login-signup-forgotpw/account-controller.php", true);
             xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
             // Gửi dữ liệu 
             var data = 'action=' + 'edit_profile' +
@@ -79,7 +79,7 @@ $(document).ready(function() {
     //EVENT WHEN OPEN MODAL
     $('#open-address').on('click', function(){
         var xhr = new XMLHttpRequest();
-        xhr.open("POST", "../../../php/controller/store/login-signup-forgotpw/account-controller.php", true);
+        xhr.open("POST", "../../../php/Controller/store/login-signup-forgotpw/account-controller.php", true);
         xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
         // Gửi dữ liệu 
         var data = 'action=' + encodeURIComponent('fetch_address');
@@ -136,7 +136,7 @@ $(document).ready(function() {
             e.preventDefault();
             
             var xhr = new XMLHttpRequest();
-            xhr.open('POST', '../../../php/controller/store/login-signup-forgotpw/account-controller.php', true);
+            xhr.open('POST', '../../../php/Controller/store/login-signup-forgotpw/account-controller.php', true);
             xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
 
             // var data = 'action=' + 'edit_profile' +
@@ -187,7 +187,7 @@ $(document).ready(function() {
         if(oldPassword.localeCompare('') != 0 && newPassword.localeCompare('') != 0){
             e.preventDefault();
             var xhr = new XMLHttpRequest();
-            xhr.open("POST", "../../../php/controller/store/login-signup-forgotpw/account-controller.php", true);
+            xhr.open("POST", "../../../php/Controller/store/login-signup-forgotpw/account-controller.php", true);
             xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
             xhr.send("oldPassword=" + encodeURIComponent(oldPassword) 
                     + "&newPassword=" + encodeURIComponent(newPassword) + "&action=" + 'reset_password');
@@ -219,7 +219,7 @@ $(document).ready(function() {
         var xhr = new XMLHttpRequest();
 
         // Define the request method, URL, and set it to be asynchronous
-        xhr.open('POST', '../../../php/controller/store/login-signup-forgotpw/account-controller.php', true);
+        xhr.open('POST', '../../../php/Controller/store/login-signup-forgotpw/account-controller.php', true);
 
         // Set the request header
         xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');

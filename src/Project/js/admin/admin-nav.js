@@ -21,7 +21,7 @@ $('#logout').click(function () {
   var xhr = new XMLHttpRequest();
 
   // Define the request method, URL, and set it to be asynchronous
-  xhr.open('POST', '../../php/controller/store/login-signup-forgotpw/account-controller.php', true);
+  xhr.open('POST', '../../php/Controller/store/login-signup-forgotpw/account-controller.php', true);
 
   // Set the request header
   xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');

@@ -86,7 +86,7 @@ $(document).ready(function() {
 
 function fetchData_Customer(orderId) {
     $.ajax({
-        url: "../../php/controller/admin/order-detail-controller.php",
+        url: "../../php/Controller/admin/order-detail-controller.php",
         type: 'POST',
         data: {action:'detail',orderId: orderId},
         dataType: 'json',
@@ -146,7 +146,7 @@ function fetchData_Customer(orderId) {
 
 function updateStatus(form_data) {
     $.ajax({
-        url: "../../php/controller/admin/order-detail-controller.php",
+        url: "../../php/Controller/admin/order-detail-controller.php",
         type: 'POST',
         data: {action:'updateStatus',order_status: form_data.order_status, id: form_data.id},
         dataType: 'json',

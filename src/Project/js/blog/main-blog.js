@@ -1,6 +1,6 @@
 $(document).ready(function () {
     $.ajax({
-        url: '../../controller/Blog/main-blog-controller.php',
+        url: '../../Controller/Blog/main-blog-controller.php',
         type: 'GET',
         dataType: 'json',
         success: function (data) {

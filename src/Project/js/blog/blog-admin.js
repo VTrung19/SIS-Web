@@ -221,7 +221,7 @@ $(document).ready(function () {
 //function to fetch data in database to table
 function fetchData(page){
     $.ajax({
-        url: '../../php/controller/Blog/blog-controller.php', 
+        url: '../../php/Controller/Blog/blog-controller.php', 
         type: 'POST',
         data: {action: 'fetch', page: page },
         dataType: 'json',
@@ -263,7 +263,7 @@ function fetchData(page){
 // function to insert blog images after blog is inserted successfully
 function fetchImages(id) {
     $.ajax({
-        url: '../../php/controller/Blog/blog-controller.php',
+        url: '../../php/Controller/Blog/blog-controller.php',
         type: 'POST',
         data: {action: 'fetch-images', id: id},
         dataType: 'json',
@@ -324,7 +324,7 @@ function updatePagination(currentPage, totalPages) {
 // Function to insert blog into the database
 function insertBlog (searchTerm)  {
     $.ajax({
-        url: '../../php/controller/Blog/blog-controller.php',
+        url: '../../php/Controller/Blog/blog-controller.php',
         type: 'POST',
         data: formData,
         contentType: false,
@@ -356,7 +356,7 @@ function insertBlog (searchTerm)  {
 // update a blog
 function updateBlog (searchTerm) {
     $.ajax({
-        url: '../../php/controller/Blog/blog-controller.php',
+        url: '../../php/Controller/Blog/blog-controller.php',
         type: 'POST',
         data: formData,
         contentType: false,
@@ -387,7 +387,7 @@ function updateBlog (searchTerm) {
 // Function to delete blog by blog_id
 function deleteBlog(blog_id, closest_row) {
     $.ajax({
-        url: '../../php/controller/Blog/blog-controller.php',
+        url: '../../php/Controller/Blog/blog-controller.php',
         type: 'POST',
         data: {action: 'delete', id: blog_id },
         success: function () {

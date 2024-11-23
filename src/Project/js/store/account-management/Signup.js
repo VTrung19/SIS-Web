@@ -28,7 +28,7 @@ $(document).ready(function () {
                 password=  encodeURIComponent(password);
             
                 $.ajax({
-                    url: '../../../php/controller/store/login-signup-forgotpw/signup-controller.php',
+                    url: '../../../php/Controller/store/login-signup-forgotpw/signup-controller.php',
                     type: 'POST',
                     data: { name:name, 
                             userlogin:userlogin, 

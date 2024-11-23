@@ -114,7 +114,7 @@ $(document).ready(function () {
 //function to fetch data in database to table
 function fetchData(page){
     $.ajax({
-        url: '../../php/controller/admin/customer-controller.php', 
+        url: '../../php/Controller/admin/customer-controller.php', 
         type: 'POST',
         data: { action: 'fetch', page: page },
         dataType: 'json',
@@ -186,7 +186,7 @@ function updatePagination(currentPage, totalPages) {
 // function to update a customer
 function updatecustomer(username, name, phone, birthday, gender, address, searchTerm){
     $.ajax({
-        url: '../../php/controller/admin/customer-controller.php',
+        url: '../../php/Controller/admin/customer-controller.php',
         type: 'POST',
         data: {action: 'update', id: tbl_id, username: username, name : name, phone : phone, gender : gender, address : address, birthday : birthday},
         dataType: 'json',
@@ -208,7 +208,7 @@ function updatecustomer(username, name, phone, birthday, gender, address, search
 // Function to delete customer by customer_id
 function deletecustomer(customerId, customerLogin, closest_row) {
     $.ajax({
-        url: '../../php/controller/admin/customer-controller.php',
+        url: '../../php/Controller/admin/customer-controller.php',
         type: 'POST',
         data: { action: 'delete', customer_id: customerId, customer_login: customerLogin },
         success: function () {
@@ -226,7 +226,7 @@ function deletecustomer(customerId, customerLogin, closest_row) {
 // Function to fetch data based on search term (customer name)
 function fetchSearchData(searchTerm, page) {
     $.ajax({
-        url: '../../php/controller/admin/customer-controller.php',
+        url: '../../php/Controller/admin/customer-controller.php',
         type: 'POST',
         data: { action: 'search', searchTerm: searchTerm, page: page },
         dataType: 'json',

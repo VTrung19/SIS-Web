@@ -165,7 +165,7 @@ $(document).ready(function () {
 //function to fetch data in database to table
 function fetchData(page){
     $.ajax({
-        url: '../../php/controller/admin/employee-controller.php', 
+        url: '../../php/Controller/admin/employee-controller.php', 
         type: 'POST',
         data: { action: 'fetch', page: page },
         dataType: 'json',
@@ -239,7 +239,7 @@ function updatePagination(currentPage, totalPages) {
 // Function to insert employee into the database
 function insertemployee(username, name, password, phone, birthday, gender, address, role, searchTerm) {
     $.ajax({
-        url: '../../php/controller/admin/employee-controller.php',
+        url: '../../php/Controller/admin/employee-controller.php',
         type: 'POST',
         data: {
             action: 'insert', 
@@ -279,7 +279,7 @@ function insertemployee(username, name, password, phone, birthday, gender, addre
 // function to update a employee
 function updateemployee(username, name, phone, birthday, gender, address, role, searchTerm){
     $.ajax({
-        url: '../../php/controller/admin/employee-controller.php',
+        url: '../../php/Controller/admin/employee-controller.php',
         type: 'POST',
         data: {action: 'update', id: tbl_id, username: username, name : name, phone : phone, gender : gender, address : address, birthday : birthday, role : role},
         dataType: 'json',
@@ -301,7 +301,7 @@ function updateemployee(username, name, phone, birthday, gender, address, role, 
 // Function to delete employee by employee_id
 function deleteemployee(employeeId, employeeLogin, closest_row) {
     $.ajax({
-        url: '../../php/controller/admin/employee-controller.php',
+        url: '../../php/Controller/admin/employee-controller.php',
         type: 'POST',
         data: {action: 'delete', employee_id: employeeId, employee_login: employeeLogin },
         success: function () {
@@ -319,7 +319,7 @@ function deleteemployee(employeeId, employeeLogin, closest_row) {
 // Function to fetch data based on search term (employee name)
 function fetchSearchData(searchTerm, page) {
     $.ajax({
-        url: '../../php/controller/admin/employee-controller.php',
+        url: '../../php/Controller/admin/employee-controller.php',
         type: 'POST',
         data: { action: 'search', searchTerm: searchTerm, page: page },
         dataType: 'json',

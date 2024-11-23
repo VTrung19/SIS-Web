@@ -119,7 +119,7 @@ $(document).ready(function () {
 //function to fetch data in database to table
 function fetchData(page){
     $.ajax({
-        url: '../../php/controller/admin/category-controller.php', //TODO: nhớ sửa lại nếu đổi thành post
+        url: '../../php/Controller/admin/category-controller.php', //TODO: nhớ sửa lại nếu đổi thành post
         type: 'POST',
         data: { action: 'fetch', page: page },
         dataType: 'json',
@@ -186,7 +186,7 @@ function updatePagination(currentPage, totalPages) {
 // Function to insert category into the database
 function insertCategory(categoryName, searchTerm) {
     $.ajax({
-        url: '../../php/controller/admin/category-controller.php',
+        url: '../../php/Controller/admin/category-controller.php',
         type: 'POST',
         data: { action: 'insert', category_name: categoryName },
         dataType: 'json',
@@ -224,7 +224,7 @@ function updateCategory(categoryName, searchTerm){
     if(categoryName.localeCompare(tbl_category_name) != 0){
         // Check if the category name already exists
         $.ajax({
-            url: '../../php/controller/admin/category-controller.php',
+            url: '../../php/Controller/admin/category-controller.php',
             type: 'POST',
             data: { action: 'update', category_name: categoryName, category_id: tbl_category_id },
             dataType: 'json',
@@ -261,7 +261,7 @@ function updateCategory(categoryName, searchTerm){
 // Function to delete category by category_id
 function deleteCategory(categoryId, closest_row) {
     $.ajax({
-        url: '../../php/controller/admin/category-controller.php',
+        url: '../../php/Controller/admin/category-controller.php',
         type: 'POST',
         data: { action: 'delete', category_id: categoryId },
         success: function (result) {
@@ -279,7 +279,7 @@ function deleteCategory(categoryId, closest_row) {
 // Function to fetch data based on search term (category name)
 function fetchSearchData(searchTerm, page) {
     $.ajax({
-        url: '../../php/controller/admin/category-controller.php',
+        url: '../../php/Controller/admin/category-controller.php',
         type: 'POST',
         data: { action: 'search', searchTerm: searchTerm, page: page },
         dataType: 'json',

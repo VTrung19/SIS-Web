@@ -382,7 +382,7 @@ $(document).ready(function () {
 // Function to fetch categories from the server
 function fetchCategories(category_name) {
     $.ajax({
-        url: '../../php/controller/admin/product-controller.php',
+        url: '../../php/Controller/admin/product-controller.php',
         type: 'POST',
         data: {action: 'fetch-categories'},
         dataType: 'json',
@@ -411,7 +411,7 @@ function fetchCategories(category_name) {
 
 function fetchImages(id) {
     $.ajax({
-        url: '../../php/controller/admin/product-controller.php',
+        url: '../../php/Controller/admin/product-controller.php',
         type: 'POST',
         data: {action: 'fetch-images', id: id},
         dataType: 'json',
@@ -448,7 +448,7 @@ function fetchImages(id) {
 // Function to fetch variants from the server
 function fetchVariants(product_id) {
     $.ajax({
-        url: '../../php/controller/admin/product-controller.php',
+        url: '../../php/Controller/admin/product-controller.php',
         type: 'POST',
         data: {action: 'fetch-variants', id: product_id},
         dataType: 'json',
@@ -511,7 +511,7 @@ function fetchVariants(product_id) {
 //function to fetch data in database to table
 function fetchData(page){
     $.ajax({
-        url: '../../php/controller/admin/product-controller.php', //TODO: nhớ sửa lại nếu đổi thành post
+        url: '../../php/Controller/admin/product-controller.php', //TODO: nhớ sửa lại nếu đổi thành post
         type: 'POST',
         data: {action: 'fetch', page: page },
         dataType: 'json',
@@ -584,7 +584,7 @@ function updatePagination(currentPage, totalPages) {
 // Function to insert product into the database
 function insertProduct (name, price, category_id, color, gender, description, product_variants, searchTerm) {
     $.ajax({
-        url: '../../php/controller/admin/product-controller.php',
+        url: '../../php/Controller/admin/product-controller.php',
         type: 'POST',
         data: {
             action: 'insert',
@@ -621,7 +621,7 @@ function insertProduct (name, price, category_id, color, gender, description, pr
 // function to insert product images after product is inserted successfully
 function insertImages (searchTerm) {
     $.ajax({
-        url: '../../php/controller/admin/product-controller.php',
+        url: '../../php/Controller/admin/product-controller.php',
         type: 'POST',
         data: formData,
         contentType: false,
@@ -641,7 +641,7 @@ function insertImages (searchTerm) {
 // update a product
 function updateProduct (update_images, id, name, price, category_id, color, gender, description, product_variants, searchTerm) {
     $.ajax({
-        url: '../../php/controller/admin/product-controller.php',
+        url: '../../php/Controller/admin/product-controller.php',
         type: 'POST',
         data: {
             action: 'update',
@@ -688,7 +688,7 @@ function updateProduct (update_images, id, name, price, category_id, color, gend
 
 function updateImages () {
     $.ajax({
-        url: '../../php/controller/admin/product-controller.php',
+        url: '../../php/Controller/admin/product-controller.php',
         type: 'POST',
         data: formData,
         contentType: false,
@@ -707,7 +707,7 @@ function updateImages () {
 // Function to delete product by product_id
 function deleteProduct(product_id, closest_row) {
     $.ajax({
-        url: '../../php/controller/admin/product-controller.php',
+        url: '../../php/Controller/admin/product-controller.php',
         type: 'POST',
         data: {action: 'delete', product_id: product_id },
         success: function () {
@@ -725,7 +725,7 @@ function deleteProduct(product_id, closest_row) {
 // Function to fetch data based on search term (product name)
 function fetchSearchData(searchTerm, page) {
     $.ajax({
-        url: '../../php/controller/admin/product-controller.php',
+        url: '../../php/Controller/admin/product-controller.php',
         type: 'POST',
         data: {action: 'search', searchTerm: searchTerm, page: page },
         dataType: 'json',

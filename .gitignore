@@ -1,0 +1,74 @@
+# .dockerignore
+# MySQL data directory
+mysql/data/*
+!mysql/data/.gitkeep
+
+# Logs
+*.log
+
+# Environment files
+.env
+.env.*
+
+# System files
+.DS_Store
+Thumbs.db
+
+# IDE files
+.idea/
+.vscode/
+*.sublime-workspace
+*.sublime-project
+
+# Dependencies
+vendor/
+node_modules/
+
+# Cache files
+*.cache
+
+# Temporary files
+*.tmp
+*.temp
+*.swp
+
+# .gitignore
+# MySQL data directory
+mysql/data/*
+!mysql/data/.gitkeep
+
+# Log files
+*.log
+
+# Environment files
+.env
+.env.*
+
+# IDE and editor files
+.idea/
+.vscode/
+*.sublime-workspace
+*.sublime-project
+
+# System files
+.DS_Store
+Thumbs.db
+
+# Dependencies
+vendor/
+node_modules/
+
+# Cache and temporary files
+*.cache
+*.tmp
+*.temp
+*.swp
+
+# MySQL files
+*.pid
+*.sock
+ibdata*
+ib_logfile*
+mysql-bin.*
+
+

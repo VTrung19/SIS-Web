@@ -3,7 +3,7 @@
 
 $(document).ready(function () {
     $.ajax({
-        url: '../../php/controller/admin/dashboard-controller.php', 
+        url: '../../php/Controller/admin/dashboard-controller.php', 
         type: 'POST',
         dataType: 'json',
         success: function (result) {

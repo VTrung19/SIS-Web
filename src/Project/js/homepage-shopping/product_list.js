@@ -9,7 +9,7 @@ $(document).ready(function () {
   var optionName = getParameterByName("searchName");
 
   $.ajax({
-    url: "../../controller/homepage-shopping/product_list-controller.php?action=fetch",
+    url: "../../Controller/homepage-shopping/product_list-controller.php?action=fetch",
     type: "GET",
     dataType: "json",
     success: function (data) {

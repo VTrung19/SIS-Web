@@ -39,7 +39,7 @@ $(document).ready(function() {
                 e.preventDefault();
               // gửi dữ liệu đăng nhập lên server
               var xhr = new XMLHttpRequest();
-              xhr.open("POST", "../../../php/controller/store/login-signup-forgotpw/account-controller.php", true);
+              xhr.open("POST", "../../../php/Controller/store/login-signup-forgotpw/account-controller.php", true);
               xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
         
               var data = "userlogin=" + encodeURIComponent(userlogin) + 

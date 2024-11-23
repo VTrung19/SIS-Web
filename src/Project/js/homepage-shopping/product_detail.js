@@ -17,7 +17,7 @@ if (window.location.href.includes("product_detail.php")) {
     let productImage;
 
     $.ajax({
-      url: "../../controller/homepage-shopping/product_detail-controller.php",
+      url: "../../Controller/homepage-shopping/product_detail-controller.php",
       type: "GET",
       dataType: "json",
       data: { product: getParameterByName("product") },
@@ -157,7 +157,7 @@ if (window.location.href.includes("product_detail.php")) {
                 else {
                   $.ajax({
                     type: "POST",
-                    url: "../../controller/homepage-shopping/add-to-cart-controller.php",
+                    url: "../../Controller/homepage-shopping/add-to-cart-controller.php",
                     data: {
                       userID: user_id,
                       productData: tempProduct,
@@ -227,7 +227,7 @@ if (window.location.href.includes("product_detail.php")) {
                 else {
                   $.ajax({
                     type: "POST",
-                    url: "../../controller/homepage-shopping/add-to-cart-controller.php",
+                    url: "../../Controller/homepage-shopping/add-to-cart-controller.php",
                     data: {
                       userID: user_id,
                       productData: tempProduct,

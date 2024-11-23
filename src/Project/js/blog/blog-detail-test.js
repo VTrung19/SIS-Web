@@ -1,7 +1,7 @@
 // Fetch data using AJAX
 $(document).ready(function () {
     $.ajax({
-        url: '../../controller/Blog/blog-detail-controller.php',
+        url: '../../Controller/Blog/blog-detail-controller.php',
         type: 'GET',
         dataType: 'json',
         data: { blogTitle: getParameterByName('blogTitle') },
