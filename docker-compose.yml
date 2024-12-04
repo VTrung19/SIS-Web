@@ -31,11 +31,11 @@ services:
       - app
 
   app:
-    build:
-      context: ./src
-      dockerfile: Dockerfile
-    container_name: php-app
     image: pquyenn/test-sis:latest
+    # build:
+    #   context: ./src
+    #   dockerfile: Dockerfile
+    container_name: php-app
     volumes:
       - app-code:/var/www/html
     networks:
